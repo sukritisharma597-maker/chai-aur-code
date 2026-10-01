@@ -2,7 +2,7 @@
   "name": "chai-aur-backend",
   "version": "1.0.0",
   "description": "learn backend from youtube",
-  "type": "module",
+  "type": "commonjs",
   "keywords": [
     "javascript",
     "backend",
@@ -10,9 +10,11 @@
   ],
   "license": "ISC",
   "author": "sukriti",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "prettier": "^3.9.9"
   }
 }
