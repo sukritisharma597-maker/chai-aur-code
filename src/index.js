@@ -1,30 +1,18 @@
-//require('dotenv').config({ path: './.env' });
 import dotenv from 'dotenv';
 dotenv.config({ path: './.env' });
 
 import connectDB from './db/index.js';
+import { app } from './app.js';
 
-connectDB();
+const port = process.env.PORT || 8000;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-import express from 'express';
-const app = express();
-
-( async() => {
-*/
+connectDB()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        });
+    })
+    .catch((error) => {
+        console.error('Failed to start the server', error);
+        process.exitCode = 1;
+    });
